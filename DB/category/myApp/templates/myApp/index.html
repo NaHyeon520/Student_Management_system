@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Database:</title>
+    <style>
+        body{
+            background-color: lightyellow;
+            margin: 0px;
+            line-height: 25px;
+            text-align: center;
+        }
+        .btn_add{
+            background-color:#C1FF6B;
+            border: groove 5px #80E12A;
+            border-radius: 10px;
+            padding: 5px;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            color: #0A6E0A;
+        }
+        .btn_edit{
+            background-color:#87CEEB;
+            border: groove 5px #00BFFF;
+            border-radius: 10px;
+            padding: 5px;
+            margin-right: 5px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            float: left;
+            color: #0064FF;
+        }
+        .btn_del{
+            background-color:#FF4646;
+            border: groove 5px #FF0000;
+            border-radius: 10px;
+            padding: 5px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            float: left;
+            color: #FFFFFF;
+        }
+        .header{
+            background-color: #A7FAEB;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
+            font-family: fantasy;
+            font-size: 20px;
+            color: #0A6EFF;
+        }
+        table{
+            width: 100%;
+            border: 1px solid #8c8c8c;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #8c8c8c;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="header"><strong>Students Management System</strong></div>
+<table>
+    <tr>
+        <td><strong>ID</strong></td>
+        <td><strong>First name</strong></td>
+        <td><strong>Second name</strong></td>
+        <td><strong>Age</strong></td>
+        <td><strong>Major</strong></td>
+        <td><strong>Address</strong></td>
+    </tr>
+    <!--student table의 모든 record 출력-->
+{% for student in students %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.firstname }}</td>
+        <td>{{ student.secondname }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.major }}</td>
+        <td>{{ student.address }}</td>
+        <td>
+            <a class="btn_edit" href="{% url 'update' student.id %}">Edit Record</a>
+            <a class="btn_del" href="{% url 'delete' student.id %}">Delete Record</a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+<a class="btn_add" href="{% url 'add' %}">Add New Record</a>
+</body>
+</html>

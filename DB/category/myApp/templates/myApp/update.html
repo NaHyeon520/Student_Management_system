@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Database: Edit</title>
+    <style>
+        body{
+            background-color: lightyellow;
+            margin: 0px;
+            line-height: 25px;
+            text-align: center;
+        }
+        .btn{
+            background-color:#87CEEB;
+            border: groove 5px #00BFFF;
+            border-radius: 10px;
+            padding: 5px;
+            margin-top: 5px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .header{
+            background-color: #A7FAEB;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
+            font-family: fantasy;
+            font-size: 20px;
+            color: #0A6EFF;
+        }
+        .right{
+            text-align: right;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="header"><strong>Students Management System</strong></div>
+<strong>Update Record</strong>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td class="right">
+                    ID: <br>
+                    First name: <br>
+                    Second name: <br>
+                    Age: <br>
+                    Major: <br>
+                    Address: <br>
+                </td>
+                <td>
+                    <input name="id" value="{{student.id}}"/><br>
+                    <input name="firstname" value="{{student.firstname}}"/><br>
+                    <input name="secondname" value="{{student.secondname}}"/><br>
+                    <input name="age" value="{{student.age}}"/><br>
+                    <input name="major" value="{{student.major}}"/><br>
+                    <input name="address" value="{{student.address}}"/><br>
+                </td>
+            </tr>
+        </table>
+        <button class="btn" type="submit">Update</button>
+    </form>
+</body>
+</html>

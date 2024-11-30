@@ -1,6 +1,6 @@
 # Student_Management_system
 
-category/model.py -> define student class
+category/model.py -> define student class <br>
 categoty/views.py -> main functions for connecting python web framework and SQL workbench
 
 ![main](https://github.com/user-attachments/assets/97674e73-fed3-4c14-82bb-30c486df135d)
